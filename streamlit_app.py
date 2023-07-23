@@ -1,10 +1,14 @@
 from firebase_admin import credentials, initialize_app, storage
+from firebase_admin import credentials
 
 import pdfkit
 import streamlit as st
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-cred = credentials.Certificate("service-account-file.json")
+
+if not firebase_admin._apps:
+    cred = credentials.Certificate("service-account-file.json") 
+    default_app = firebase_admin.initialize_app(cred)
     
     
 initialize_app(cred, {'storageBucket': 'invoice-generator-e1f3d.appspot.com'})
