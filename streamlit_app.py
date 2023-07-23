@@ -48,7 +48,7 @@ if submit:
         total=total,
     )
 
-    pdf = pdfkit.from_string(html, False
+    pdf = pdfkit.from_string(html, False)
 
     print(type(data))
     st.balloons()
