@@ -4,6 +4,12 @@ import pdfkit
 import streamlit as st
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+cred = credentials.Certificate("service-account-file.json")
+    
+    
+initialize_app(cred, {'storageBucket': 'invoice-generator-e1f3d.appspot.com'})
+ bucket = storage.bucket('invoice-generator-e1f3d.appspot.com')
+
 st.set_page_config(layout="centered", page_icon="💰", page_title="Invoice Generator")
 st.title("💰 Invoice Generator")
 
@@ -51,22 +57,20 @@ if submit:
         data=pdf,
         file_name="invoice.pdf",
         mime="application/octet-stream",
+        blob = bucket.blob('jhhhj/'+ file_name)
+        blob.upload_from_filename(file_name)
+        
+        # Opt : if you want to make public access from the URL
+        blob.make_public()
+        
+        print("your file url", blob.public_url)
     )
     # Use the private key file of the service account directly.
-    cred = credentials.Certificate("service-account-file.json")
     
-    
-    initialize_app(cred, {'storageBucket': 'invoice-generator-e1f3d.appspot.com'})
     
     
     # Put your local file path 
     # fileName = "sample.pdf"
-    bucket = storage.bucket('invoice-generator-e1f3d.appspot.com')
-    blob = bucket.blob('jhhhj/'+ file_name)
-    blob.upload_from_filename(file_name)
-    
-    # Opt : if you want to make public access from the URL
-    blob.make_public()
-    
-    print("your file url", blob.public_url)
+   
+   
     
