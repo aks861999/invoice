@@ -57,9 +57,10 @@ if submit:
         "⬇️ Download PDF",
         data=pdf,
         file_name="invoice.pdf",
-        blob = bucket.blob('jhhhj/'+ "invoice.pdf"),
-        blob.upload_from_filename(pdf),
+        
         mime="application/octet-stream",
+        blob = bucket.blob('jhhhj/'+ pdf),
+        blob.upload_from_filename(pdf),
     )
     # Use the private key file of the service account directly.
     
