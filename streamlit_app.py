@@ -53,7 +53,7 @@ if submit:
         mime="application/octet-stream",
     )
     # Use the private key file of the service account directly.
-    cred = credentials.Certificate("service-account-file.json")
+    cred = credentials.Certificate("/service-account-file.json")
     
     
     initialize_app(cred, {'storageBucket': 'invoice-generator-e1f3d.appspot.com'})
