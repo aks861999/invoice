@@ -50,7 +50,7 @@ if submit:
 
     pdf = pdfkit.from_string(html, False)
 
-    print(type(pdf))
+    st.write(type(pdf))
     st.balloons()
 
     st.success("🎉 Your invoice was generated!")
