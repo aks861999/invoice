@@ -62,17 +62,3 @@ if submit:
         blob = bucket.blob('jhhhj/'+ pdf),
         blob.upload_from_filename(pdf),
     )
-    # Use the private key file of the service account directly.
-    
-    
-    
-    # Opt : if you want to make public access from the URL
-    blob.make_public()
-    
-    print("your file url", blob.public_url)
-    
-    # Put your local file path 
-    # fileName = "sample.pdf"
-   
-   
-    
