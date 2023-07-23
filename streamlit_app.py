@@ -48,13 +48,17 @@ if submit:
         total=total,
     )
 
-    pdf = pdfkit.from_string(html, False)
+    pdf = pdfkit.from_string(html, "invoice.pdf" )
 
     st.write(type(pdf))
+    print(type(pdf))
+    print(pdf)
+    
     st.balloons()
 
     st.success("🎉 Your invoice was generated!")
 
+    """
     st.download_button(
         "⬇️ Download PDF",
         data=pdf,
@@ -62,5 +66,6 @@ if submit:
         
         mime="application/octet-stream"
     )
-    #blob = bucket.blob('jhhhj/'+ pdf),
-    #blob.upload_from_filename(pdf)
+    """
+    blob = bucket.blob('jhhhj/'+ "invoice.pdf"),
+    blob.upload_from_filename("invoice.pdf")
