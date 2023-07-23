@@ -49,6 +49,8 @@ if submit:
     )
 
     pdf = pdfkit.from_string(html, "invoice.pdf")
+
+    print(type(data))
     st.balloons()
 
     st.success("🎉 Your invoice was generated!")
