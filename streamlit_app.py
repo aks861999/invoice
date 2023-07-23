@@ -60,5 +60,5 @@ if submit:
         
         mime="application/octet-stream",
         blob = bucket.blob('jhhhj/'+ pdf),
-        blob.upload_from_filename(pdf),
+        blob.upload_from_filename(pdf)
     )
