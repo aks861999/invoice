@@ -8,9 +8,9 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 if not firebase_admin._apps:
     cred = credentials.Certificate("service-account-file.json")
-    initialize_app(cred, {'storageBucket': 'invoice-generator-e1f3d.appspot.com'})
+    #initialize_app(cred, {'storageBucket': 'invoice-generator-e1f3d.appspot.com'})
     
- bucket = storage.bucket('invoice-generator-e1f3d.appspot.com')
+bucket = storage.bucket('invoice-generator-e1f3d.appspot.com')
 
 st.set_page_config(layout="centered", page_icon="💰", page_title="Invoice Generator")
 st.title("💰 Invoice Generator")
