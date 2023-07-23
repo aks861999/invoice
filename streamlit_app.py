@@ -5,7 +5,8 @@ import pdfkit
 import streamlit as st
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-
+cred = credentials.Certificate("service-account-file.json")
+    #initialize_app(cred, {'storageBucket': 'invoice-generator-e1f3d.appspot.com'})
 
     
 bucket = storage.bucket('invoice-generator-e1f3d.appspot.com')
